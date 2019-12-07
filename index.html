@@ -1,11 +1,24 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <body>
-        <form method = "POST" action = "get_google_script.php">
-            <input type = "text" placeholder = "Username" name = "username"/>
-            <input type = "text" placeholder = "Email" name = "email"/>
-            <input type = "text" placeholder = "API Token" name = "apitoken"/>
-            <input type = "submit" value="do that"/>
-        </form>
-    </body>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+</body>
+<script>
+let URL = "https://www.rescuetime.com/anapi/data?key=B63SD5uLHof2HskzdelSGP5Tp2d5QyGdE8J0ELSQ";
+$.post(URL, function(data) {
+  data = JSON.parse(data);
+  var youtubeLog = data.rows.find(function(website) {
+    return website[3] == 'youtube.com';
+  });
+  if (website[0] > 60) {
+    $.post("get_google_script.php", {
+      email: "leonzalion@gmail.com",
+      name: "Leon",
+      api_token: "B63SD5uLHof2HskzdelSGP5Tp2d5QyGdE8J0ELSQ"
+    });
+  }
+})
+</script>
 </html>
