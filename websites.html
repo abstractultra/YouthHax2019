@@ -18,7 +18,7 @@
   $.post("/websites.php", function(data) {
     data = JSON.parse(data);
     data.rows.forEach(function (row) {
-      if (row[3].indexOf(' ') != -1) return;
+      if (row.indexOf(' ') != -1) return;
       let websiteDiv = $('<div></div>');
       websiteDiv.html(row[3]);
       
